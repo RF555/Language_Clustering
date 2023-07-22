@@ -1,0 +1,27 @@
+import io
+import pandas as pd
+
+fil9 = 'fil9'
+first_par = 'wiki-first-paragraph'
+
+curr_in = first_par
+
+_input = 'data/' + curr_in
+_output = 'split-output/split-output-' + curr_in + '-'
+
+
+if __name__ == '__main__':
+    print("Splitting Lines\n")
+    fin = io.open(_input, 'r', encoding='utf-8', newline='\n', errors='ignore')
+    x = fin.readline()
+    num = 1
+
+    while x:
+        x = x.replace(". ", ".\n").replace("! ", "!\n").replace("? ", "?\n")
+        curr_file = open(_output + str(num), "w")
+        curr_file.write(x)
+        # print(x)
+        num += 1
+        x = fin.readline()
+
+
