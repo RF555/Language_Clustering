@@ -3,8 +3,10 @@ import pandas as pd
 
 fil9 = 'fil9'
 first_par = 'wiki-first-paragraph'
+old_fil9 = 'fil9-old'
+old_first_par = 'wiki-first-paragraph-old'
 
-curr_in = first_par
+curr_in = old_first_par
 
 _input = 'data/' + curr_in
 _output = 'split-output/split-output-' + curr_in + '-'

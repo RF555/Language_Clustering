@@ -1,9 +1,9 @@
 #!/usr/bin/perl
 
 # Program to filter Wikipedia XML dumps to "clean" text consisting only of lowercase
-# letters (a-z, converted from A-Z), and spaces (never consecutive).  
-# All other characters are converted to spaces.  Only text which normally appears 
-# in the web browser is displayed.  Tables are removed.  Image captions are 
+# letters (a-z, converted from A-Z), and spaces (never consecutive).
+# All other characters are converted to spaces.  Only text which normally appears
+# in the web browser is displayed.  Tables are removed.  Image captions are
 # preserved.  Links are converted to normal text.  Digits are spelled out.
 
 # Written by Matt Mahoney, June 10, 2006.  This program is released to the public domain.
@@ -39,7 +39,7 @@ while (<>) {
 
     # convert to lowercase letters and spaces, spell digits
     $_=" $_ ";
-#    tr/A-Z/a-z/;
+    tr/A-Z/a-z/;
     s/0/ zero /g;
     s/1/ one /g;
     s/2/ two /g;
@@ -50,14 +50,7 @@ while (<>) {
     s/7/ seven /g;
     s/8/ eight /g;
     s/9/ nine /g;
-    s/'''//g;
-    s/''/"/g;
-#    s/./.\n/;
-#    s/!/!\n/;
-#    s/'''/' /g;
-#    s/'''/ '/g;
-#    s/=//g;
-    tr/A-Z,a-z,.,,,!,?,@,$,%,&,",',-,+,_,(,),;,:,[,],<,>/ /cs;
+    tr/a-z/ /cs;
     chop;
     print $_;
     print "\n";

@@ -32,8 +32,10 @@ if __name__ == '__main__':
         english_token_ids = tokenizer(x, return_tensors="pt", padding=True)
         english_tokens = tokenizer.convert_ids_to_tokens(english_token_ids['input_ids'][0])
 
+        print(english_tokens)
+
         for i in range(len(english_tokens)):
             check_key(english_tokens[i], english_token_ids['input_ids'][0][i].item())
         x = fin.readline()
 
-    print(word_dict)
+    # print(word_dict)
