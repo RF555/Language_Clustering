@@ -13,7 +13,7 @@ _output = 'split-output/split-output-' + curr_in + '-'
 
 
 if __name__ == '__main__':
-    print("Splitting Lines\n")
+    print("Splitting Lines of ",_input,"\n")
     fin = io.open(_input, 'r', encoding='utf-8', newline='\n', errors='ignore')
     x = fin.readline()
     num = 1
