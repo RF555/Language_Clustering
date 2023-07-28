@@ -57,7 +57,7 @@ if __name__ == '__main__':
         words = sentences.split()
 
         for w in words:
-            if w[-1]=='.':
+            if len(w)>1 and w[-1]=='.':
                 w2=w.split('.')[0]
                 if w2 not in word_dict:
                     word_dict[w2] = w2
