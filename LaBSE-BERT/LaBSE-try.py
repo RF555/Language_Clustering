@@ -57,12 +57,21 @@ if __name__ == '__main__':
         words = sentences.split()
 
         for w in words:
+            if w[-1]=='.':
+                w2=w.split('.')[0]
+                if w2 not in word_dict:
+                    word_dict[w2] = w2
+                    df2 = pd.DataFrame(get_vec(w2))
+                    df2.insert(loc=0, column='Word', value=w2)
+                    word_df = pd.concat([word_df, df2])
+                    print(w2,"\t(Without '.')")
+
             if w not in word_dict:
-                print(w)
                 word_dict[w] = w
                 df = pd.DataFrame(get_vec(w))
                 df.insert(loc=0, column='Word', value=w)
                 word_df = pd.concat([word_df, df])
+                print(w)
 
         sentences = fin.readline()
 
