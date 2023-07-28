@@ -133,7 +133,7 @@ dmypy.json
 
 # Ignore Large Data Files
 /LaBSE-BERT/data
-/LaBSE-BERT/split-output
+#/LaBSE-BERT/split-output
 
 # Include Smaller Data Files
 !/LaBSE-BERT/data/wiki-first-paragraph
