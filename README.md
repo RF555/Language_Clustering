@@ -35,14 +35,14 @@ $ wget https://dumps.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xm
 
 # Prepering The Data
 
-## Pre-process Using `wikifil.pl`
+## Pre-process Using `my-wikifil.pl`
 
 A raw Wikipedia dump contains a lot of HTML / XML data.
 We pre-process it with the wikifil.pl script
 (originally developed by Matt Mahoney, we changed it a bit).
 
 ```
-$ perl wikifil.pl data/enwik9 > data/fil9
+$ perl my-wikifil.pl data/enwik9 > data/fil9
 ```
 
 ## Split Sentences
