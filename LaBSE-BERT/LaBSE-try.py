@@ -14,7 +14,7 @@ old_first_par = 'wiki-first-paragraph-old'
 curr_in = old_first_par
 
 _input = 'split-output/split-output-' + curr_in
-
+_output = 'CSVs/' + curr_in + '.csv'
 word_dict = {}
 word_df = pd.DataFrame()
 
@@ -61,10 +61,10 @@ if __name__ == '__main__':
                 print(w)
                 word_dict[w] = w
                 df = pd.DataFrame(get_vec(w))
-                df.insert(loc=0, column='word', value=w)
+                df.insert(loc=0, column='Word', value=w)
                 word_df = pd.concat([word_df, df])
 
         sentences = fin.readline()
 
     print(word_df)
-    word_df.to_csv(curr_in + ".csv")
+    word_df.to_csv(_output)
