@@ -8,10 +8,11 @@ from sklearn.preprocessing import normalize
 test1 = 'test1'
 fil9 = 'fil9'
 first_par = 'wiki-first-paragraph'
+
 old_fil9 = 'fil9-old'
 old_first_par = 'wiki-first-paragraph-old'
 
-curr_in = test1
+curr_in = first_par
 
 _input = 'split-output/split-output-' + curr_in
 _output = 'CSVs/' + curr_in + '.csv'
@@ -67,7 +68,7 @@ def add_to_word_dict(word, pre_sign='none', post_sign='none'):
 def check_sign(word):
     add_to_word_dict(word=word)
 
-    if len(w) > 1:
+    if len(word) > 1:
         if (word[0] == '\"' or word[0] == '\'') and word[0] == word[-1]:
             surrounded_word = word.split(word[0])[1]
             add_to_word_dict(word=surrounded_word)
@@ -107,6 +108,11 @@ def check_post_sign(word):
 if __name__ == '__main__':
     fin = io.open(_input, 'r', encoding='utf-8', newline='\n', errors='ignore')
     sentences = fin.readline()
+
+    # add all signs
+    signs="./?!\"\':;-(),"
+    for sign in signs:
+        add_to_word_dict(sign)
 
     while sentences:
         # print(sentence)
