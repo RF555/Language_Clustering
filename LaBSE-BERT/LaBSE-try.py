@@ -5,6 +5,8 @@ from transformers import *
 import torch
 from sklearn.preprocessing import normalize
 
+import pickle
+
 test1 = 'test1'
 fil9 = 'fil9'
 first_par = 'wiki-first-paragraph'
@@ -12,12 +14,12 @@ first_par = 'wiki-first-paragraph'
 old_fil9 = 'fil9-old'
 old_first_par = 'wiki-first-paragraph-old'
 
-curr_in = first_par
+curr_in = old_first_par
 
 _input = 'split-output/split-output-' + curr_in
-_output = 'CSVs/' + curr_in + '.csv'
+_output = 'CSVs/' + curr_in
 word_dict = {}
-word_df = pd.DataFrame()
+# word_df = pd.DataFrame()
 
 # Load Pre-Trained Model
 tokenizer = AutoTokenizer.from_pretrained("setu4993/LaBSE", do_lower_case=False)
@@ -50,11 +52,11 @@ def get_vec(word):
 
 def add_to_word_dict(word, pre_sign='none', post_sign='none'):
     if word not in word_dict:
-        word_dict[word] = word
-        df = pd.DataFrame(get_vec(word))
-        df.insert(loc=0, column='Word', value=word)
-        global word_df
-        word_df = pd.concat([word_df, df])
+        word_dict[word] = get_vec(word)
+        # df = pd.DataFrame(get_vec(word))
+        # df.insert(loc=0, column='Word', value=word)
+        # global word_df
+        # word_df = pd.concat([word_df, df])
         if pre_sign != 'none' and post_sign != 'none':
             print(word, "\t(Without surrounding '", pre_sign, "')")
         elif pre_sign != 'none':
@@ -110,7 +112,7 @@ if __name__ == '__main__':
     sentences = fin.readline()
 
     # add all signs
-    signs="./?!\"\':;-(),"
+    signs = "./?!\"\':;-(),"
     for sign in signs:
         add_to_word_dict(sign)
 
@@ -124,5 +126,10 @@ if __name__ == '__main__':
 
         sentences = fin.readline()
 
-    print(word_df)
-    word_df.to_csv(_output)
+    # print(word_df)
+    # print(word_dict)
+
+    with open(_output + '.pkl', 'wb') as file:
+        pickle.dump(word_dict, file, protocol=pickle.HIGHEST_PROTOCOL)
+
+    # word_df.to_csv(_output+'.csv')

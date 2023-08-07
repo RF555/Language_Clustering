@@ -147,4 +147,7 @@ dmypy.json
 !/LaBSE-BERT/CSVs/test1.csv
 !/LaBSE-BERT/CSVs/wiki-first-paragraph.csv
 !/LaBSE-BERT/CSVs/wiki-first-paragraph-old.csv
+!/LaBSE-BERT/CSVs/test1.pkl
+!/LaBSE-BERT/CSVs/wiki-first-paragraph.pkl
+!/LaBSE-BERT/CSVs/wiki-first-paragraph-old.pkl
 
