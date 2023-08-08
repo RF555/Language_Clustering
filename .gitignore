@@ -134,8 +134,8 @@ dmypy.json
 # Ignore Large Data Files
 /LaBSE-BERT/data/*
 /LaBSE-BERT/split-output/*
-#/LaBSE-BERT/VECTOR-files/*
-/LaBSE-BERT/VECTOR-files/dim-reduct/*
+/LaBSE-BERT/VECTOR-files/OG-vectors/*
+/LaBSE-BERT/VECTOR-files/reduct/*
 
 # Include Smaller Data Files
 !/LaBSE-BERT/data/wiki-first-paragraph-old
@@ -145,12 +145,12 @@ dmypy.json
 !/LaBSE-BERT/split-output/split-output-wiki-first-paragraph
 !/LaBSE-BERT/split-output/split-output-wiki-first-paragraph-old
 
-!/LaBSE-BERT/VECTOR-files/test1.csv
-!/LaBSE-BERT/VECTOR-files/wiki-first-paragraph.csv
-!/LaBSE-BERT/VECTOR-files/wiki-first-paragraph-old.csv
-!/LaBSE-BERT/VECTOR-files/test1.pkl
-!/LaBSE-BERT/VECTOR-files/wiki-first-paragraph.pkl
-!/LaBSE-BERT/VECTOR-files/wiki-first-paragraph-old.pkl
+!/LaBSE-BERT/VECTOR-files/OG-vectors/test1.csv
+!/LaBSE-BERT/VECTOR-files/OG-vectors/wiki-first-paragraph.csv
+!/LaBSE-BERT/VECTOR-files/OG-vectors/wiki-first-paragraph-old.csv
+!/LaBSE-BERT/VECTOR-files/OG-vectors/test1.pkl
+!/LaBSE-BERT/VECTOR-files/OG-vectors/wiki-first-paragraph.pkl
+!/LaBSE-BERT/VECTOR-files/OG-vectors/wiki-first-paragraph-old.pkl
 
 !/LaBSE-BERT/VECTOR-files/dim-reduct/test1.pkl
 !/LaBSE-BERT/VECTOR-files/dim-reduct/wiki-first-paragraph.pkl
