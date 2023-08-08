@@ -50,7 +50,12 @@ $ perl my-wikifil.pl data/enwik9 > data/fil9
 The data must be split to sentences. We do it by running the scropt `split-lines.py` that saves the current input files
 in the folder `split-output`.
 
-# Generate ***WORD*** Vectors (to CSV)
+# Generate ***WORD*** Vectors (to `.pkl` file)
 
 To create ***word*** vectors from all words in the text, run the script `LaBSE-try.py` which will generate the word
-vectors and will save them as a `.CSV` file.
+vectors and will save them as a `.pkl` file.
+
+The object saved to the `.pkl` file will be a dictionary with words as keys, and vectors of type `numpy.ndarray` as
+values.
+
+## Dimantion Reduction
