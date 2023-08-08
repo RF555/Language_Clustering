@@ -134,7 +134,7 @@ dmypy.json
 # Ignore Large Data Files
 /LaBSE-BERT/data/*
 /LaBSE-BERT/split-output/*
-/LaBSE-BERT/VECTOR-files/*
+#/LaBSE-BERT/VECTOR-files/*
 /LaBSE-BERT/VECTOR-files/dim-reduct/*
 
 # Include Smaller Data Files
