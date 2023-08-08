@@ -17,7 +17,7 @@ old_first_par = 'wiki-first-paragraph-old'
 curr_in = old_first_par
 
 _input = 'split-output/split-output-' + curr_in
-_output = 'CSVs/' + curr_in
+_output = 'VECTOR-files/' + curr_in
 word_dict = {}
 # word_df = pd.DataFrame()
 
