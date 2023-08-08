@@ -151,6 +151,7 @@ dmypy.json
 !/LaBSE-BERT/VECTOR-files/OG-vectors/test1.pkl
 !/LaBSE-BERT/VECTOR-files/OG-vectors/wiki-first-paragraph.pkl
 !/LaBSE-BERT/VECTOR-files/OG-vectors/wiki-first-paragraph-old.pkl
+!/LaBSE-BERT/VECTOR-files/OG-vectors/demo-vec.pkl
 
 !/LaBSE-BERT/VECTOR-files/reduct/test1.pkl
 !/LaBSE-BERT/VECTOR-files/reduct/wiki-first-paragraph.pkl
