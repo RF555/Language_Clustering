@@ -20,13 +20,13 @@ _input = 'VECTOR-files/OG-vectors/' + curr_in
 _output = 'VECTOR-files/reduct/' + curr_in
 
 
-def reductPCA():
+def reductPCA(n_components):
     # preprocessing data (scaling the data)
     my_scaler = Scaler.StandardScaler()
     # my_scaler=Scaler.MinMaxScaler() # another method of scaling
     my_scaler.fit(vector_df)
     scaled_data = my_scaler.transform(vector_df)  # transform the data (transform again later)
-    pca = PCA(n_components=3)
+    pca = PCA(n_components=n_components)
     pca.fit(scaled_data)
     data_pca = pca.transform(scaled_data)  # transform back
 
@@ -85,7 +85,7 @@ if __name__ == '__main__':
     # print('\n\n')
     # print(word_keys)
 
-    reducted_data = reductPCA()
+    reducted_data = reductPCA(3)
 
     plotGraph2D(reducted_data)
     plotGraph3D(reducted_data)
