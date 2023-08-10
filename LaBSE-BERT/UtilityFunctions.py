@@ -20,6 +20,13 @@ def pklToDF(path: str):
     return word_keys, vector_df
 
 
+def dictToPkl(word_dict: dict, output_path: str):
+    if not output_path.endswith('.pkl'):
+        output_path += '.pkl'
+    with open(output_path, 'wb') as file:
+        pickle.dump(word_dict, file, protocol=pickle.HIGHEST_PROTOCOL)
+
+
 def plotGraph3D(curr_data):
     # Creating figure
     fig = plt.figure(figsize=(8, 6))

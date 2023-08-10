@@ -4,7 +4,7 @@ from transformers import *
 import torch
 from sklearn.preprocessing import normalize
 
-import pickle
+from UtilityFunctions import dictToPkl
 
 test1 = 'test1'
 fil9 = 'fil9'
@@ -13,7 +13,7 @@ first_par = 'wiki-first-paragraph'
 old_fil9 = 'fil9-old'
 old_first_par = 'wiki-first-paragraph-old'
 
-curr_in = old_first_par
+curr_in = test1
 
 _input = 'split-output/split-output-' + curr_in
 _output = 'VECTOR-files/OG-vectors/' + curr_in
@@ -128,7 +128,8 @@ if __name__ == '__main__':
     # print(word_df)
     # print(word_dict)
 
-    with open(_output + '.pkl', 'wb') as file:
-        pickle.dump(word_dict, file, protocol=pickle.HIGHEST_PROTOCOL)
+    first_word = list(word_dict.keys())[0]
+    vec_dim = word_dict[first_word].size
+    updated_output = _output + '-dim' + str(vec_dim)
+    dictToPkl(word_dict=word_dict, output_path=updated_output)
 
-    # word_df.to_csv(_output+'.csv')

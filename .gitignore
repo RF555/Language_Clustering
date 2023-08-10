@@ -148,10 +148,10 @@ dmypy.json
 !/LaBSE-BERT/VECTOR-files/OG-vectors/test1.csv
 !/LaBSE-BERT/VECTOR-files/OG-vectors/wiki-first-paragraph.csv
 !/LaBSE-BERT/VECTOR-files/OG-vectors/wiki-first-paragraph-old.csv
-!/LaBSE-BERT/VECTOR-files/OG-vectors/test1.pkl
-!/LaBSE-BERT/VECTOR-files/OG-vectors/wiki-first-paragraph.pkl
-!/LaBSE-BERT/VECTOR-files/OG-vectors/wiki-first-paragraph-old.pkl
-!/LaBSE-BERT/VECTOR-files/OG-vectors/demo-vec.pkl
+!/LaBSE-BERT/VECTOR-files/OG-vectors/test1-dim768.pkl
+!/LaBSE-BERT/VECTOR-files/OG-vectors/wiki-first-paragraph-dim768.pkl
+!/LaBSE-BERT/VECTOR-files/OG-vectors/wiki-first-paragraph-old-dim768.pkl
+!/LaBSE-BERT/VECTOR-files/OG-vectors/demo-vec-dim768.pkl
 
 !/LaBSE-BERT/VECTOR-files/DIM-reduction/test1.pkl
 !/LaBSE-BERT/VECTOR-files/DIM-reduction/wiki-first-paragraph.pkl
