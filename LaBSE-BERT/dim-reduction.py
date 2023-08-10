@@ -11,7 +11,7 @@ first_par = 'wiki-first-paragraph'
 old_fil9 = 'fil9-old'
 old_first_par = 'wiki-first-paragraph-old'
 
-curr_in = test1
+curr_in = old_first_par
 
 _input = 'VECTOR-files/BERT-vectors/' + curr_in + '-dim768'
 _output = 'VECTOR-files/DIM-reduction/' + curr_in
@@ -44,7 +44,6 @@ if __name__ == '__main__':
     # pyplotGraph3D(reducted_data)
 
     updated_output = _output + '-dim' + str(reducted_data[0].size)
-
     dictToPkl(word_dict=DFtoDict(word_keys=word_keys,
                                  vector_df=pd.DataFrame(reducted_data)),
               output_path=updated_output)

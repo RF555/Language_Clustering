@@ -7,7 +7,7 @@ import plotly.graph_objs as go
 
 
 def DFtoDict(word_keys, vector_df):
-    word_list = list(word_keys[0])
+    word_list = list(word_keys['Words'])
     word_dict = dict()
 
     for i, vec in vector_df.iterrows():
