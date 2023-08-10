@@ -1,5 +1,4 @@
 import io
-import pandas as pd
 
 fil9 = 'fil9'
 first_par = 'wiki-first-paragraph'
