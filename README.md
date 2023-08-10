@@ -1,11 +1,23 @@
+<style>
+ul.star{list-style: none;}
+ul.star li::before{
+    content: "\272A";
+    color: orange;
+    font-weight: bold;
+    font-size: 18px;
+    display: inline-block; 
+    width: 1.5em;
+    margin-left: 1em;
+}
+</style>
+
 # Language_Clustering
 
 ## Installs
 
 ### Install `🤗 Transformers`
 
-Follow the instructions from the Hugging Face website:
-https://huggingface.co/docs/transformers/installation
+Follow the instructions from the [Hugging Face website](https://huggingface.co/docs/transformers/installation).
 
 # Download English Wikipedia pages
 
@@ -50,12 +62,32 @@ $ perl my-wikifil.pl data/enwik9 > data/fil9
 The data must be split to sentences. We do it by running the scropt `split-lines.py` that saves the current input files
 in the folder `split-output`.
 
+<ul class="star">
+  <li>Make sure to update the correct input and output!</li>
+</ul>
+
 # Generate ***WORD*** Vectors (to `.pkl` file)
 
-To create ***word*** vectors from all words in the text, run the script `LaBSE-try.py` which will generate the word
-vectors and will save them as a `.pkl` file.
+To create ***word*** vectors from all words in the text, run the main function of the script `LaBSE-try.py` which will
+generate the word vectors and will save them as a `.pkl` file.
+
+<ul class="star">
+    <li>Make sure to update the correct input and output!</li>
+</ul>
 
 The object saved to the `.pkl` file will be a dictionary with words as keys, and vectors of type `numpy.ndarray` as
 values.
 
-## Dimantion Reduction
+## Dimension Reduction
+
+To reduce the dimensionality of the vectors using the following algorithms:
+
+* PCA
+
+<ul class="star">
+    <li>Make sure to update the correct input and output!</li>
+    <li>Choose the relevant algorithm AND dimensionality.</li>
+</ul>
+
+
+

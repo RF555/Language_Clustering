@@ -21,8 +21,10 @@ def reductPCA(n_components):
     # preprocessing data (scaling the data)
     my_scaler = skscaler.StandardScaler()
     # my_scaler=Scaler.MinMaxScaler() # another method of scaling
+
     my_scaler.fit(vector_df)
     scaled_data = my_scaler.transform(vector_df)  # transform the data (transform again later)
+
     pca = PCA(n_components=n_components)
     pca.fit(scaled_data)
     data_pca = pca.transform(scaled_data)  # transform back
