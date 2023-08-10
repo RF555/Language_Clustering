@@ -5,7 +5,7 @@ demo_vec = 'demo-vec'
 
 curr_in = demo_vec
 
-_output = 'OG-vectors/' + curr_in
+_output = 'BERT-vectors/' + curr_in
 
 if __name__ == '__main__':
 

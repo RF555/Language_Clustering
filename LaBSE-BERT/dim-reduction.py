@@ -13,7 +13,7 @@ old_first_par = 'wiki-first-paragraph-old'
 
 curr_in = test1
 
-_input = 'VECTOR-files/OG-vectors/' + curr_in
+_input = 'VECTOR-files/BERT-vectors/' + curr_in
 _output = 'VECTOR-files/DIM-reduction/' + curr_in
 
 
