@@ -153,6 +153,6 @@ dmypy.json
 !/LaBSE-BERT/VECTOR-files/BERT-vectors/wiki-first-paragraph-old-dim768.pkl
 !/LaBSE-BERT/VECTOR-files/BERT-vectors/demo-vec-dim768.pkl
 
-!/LaBSE-BERT/VECTOR-files/DIM-reduction/test1.pkl
+!/LaBSE-BERT/VECTOR-files/DIM-reduction/test1*
 !/LaBSE-BERT/VECTOR-files/DIM-reduction/wiki-first-paragraph.pkl
 !/LaBSE-BERT/VECTOR-files/DIM-reduction/wiki-first-paragraph-old.pkl
