@@ -1,6 +1,5 @@
 import io
 
-import pandas as pd
 from transformers import *
 import torch
 from sklearn.preprocessing import normalize
