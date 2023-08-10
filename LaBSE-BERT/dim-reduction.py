@@ -13,7 +13,7 @@ old_first_par = 'wiki-first-paragraph-old'
 
 curr_in = test1
 
-_input = 'VECTOR-files/BERT-vectors/' + curr_in
+_input = 'VECTOR-files/BERT-vectors/' + curr_in + '-dim768'
 _output = 'VECTOR-files/DIM-reduction/' + curr_in
 
 
@@ -29,6 +29,9 @@ def reductPCA(n_components):
     pca.fit(scaled_data)
     data_pca = pca.transform(scaled_data)  # transform back
 
+    global _output
+    _output += '(PCA)'
+
     return data_pca
 
 
@@ -37,5 +40,11 @@ if __name__ == '__main__':
 
     reducted_data = reductPCA(3)
 
-    plotGraph2D(reducted_data)
-    plotGraph3D(reducted_data)
+    # plotGraph2D(reducted_data)
+    # pyplotGraph3D(reducted_data)
+
+    updated_output = _output + '-dim' + str(reducted_data[0].size)
+
+    dictToPkl(word_dict=DFtoDict(word_keys=word_keys,
+                                 vector_df=pd.DataFrame(reducted_data)),
+              output_path=updated_output)

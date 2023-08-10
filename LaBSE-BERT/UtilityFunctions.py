@@ -3,12 +3,30 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
+import plotly.graph_objs as go
+from plotly import tools
+from plotly.subplots import make_subplots
+import plotly.offline as py
 
-def pklToDF(path: str):
-    with open(path, "rb") as file:
+
+def DFtoDict(word_keys, vector_df):
+    word_list = list(word_keys[0])
+    word_dict = dict()
+
+    for i, vec in vector_df.iterrows():
+        word_dict[word_list[i]] = vec.to_numpy()
+
+    return word_dict
+
+
+def pklToDF(input_path: str):
+    if not input_path.endswith('.pkl'):
+        input_path += '.pkl'
+    with open(input_path, "rb") as file:
         loaded_dict = pickle.load(file)
 
     word_keys = pd.DataFrame(loaded_dict.keys())
+    word_keys.rename(columns={0: 'Words'}, inplace=True)
     vector_arr = np.array(loaded_dict[list(loaded_dict.keys())[0]])
     for key in loaded_dict.keys():
 
@@ -27,19 +45,15 @@ def dictToPkl(word_dict: dict, output_path: str):
         pickle.dump(word_dict, file, protocol=pickle.HIGHEST_PROTOCOL)
 
 
-def plotGraph3D(curr_data):
-    # Creating figure
-    fig = plt.figure(figsize=(8, 6))
-    ax = plt.axes(projection="3d")
+def pyplotGraph3D(curr_data):
+    x = np.array(curr_data[0])
+    y = np.array(curr_data[1])
+    z = np.array(curr_data[2])
 
-    # Creating plot
-    ax.scatter3D(curr_data[:, 0], curr_data[:, 1], curr_data[:, 2], color="green")
-    plt.title("3D scatter plot")
-    ax.set_xlabel('First principle component', fontweight='bold')
-    ax.set_ylabel('Second principle component', fontweight='bold')
-    ax.set_zlabel('Third principle component', fontweight='bold')
+    fig = plt.figure()
+    ax = fig.add_subplot(111, projection='3d')
+    ax.scatter(x, y, z, marker="s", c=curr_data['Cluster'], s=40, cmap="Set1")
 
-    # show plot
     plt.show()
 
 
