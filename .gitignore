@@ -145,14 +145,11 @@ dmypy.json
 !/LaBSE-BERT/split-output/split-output-wiki-first-paragraph
 !/LaBSE-BERT/split-output/split-output-wiki-first-paragraph-old
 
-!/LaBSE-BERT/VECTOR-files/BERT-vectors/test1.csv
-!/LaBSE-BERT/VECTOR-files/BERT-vectors/wiki-first-paragraph.csv
-!/LaBSE-BERT/VECTOR-files/BERT-vectors/wiki-first-paragraph-old.csv
 !/LaBSE-BERT/VECTOR-files/BERT-vectors/test1-dim768.pkl
 !/LaBSE-BERT/VECTOR-files/BERT-vectors/wiki-first-paragraph-dim768.pkl
 !/LaBSE-BERT/VECTOR-files/BERT-vectors/wiki-first-paragraph-old-dim768.pkl
 !/LaBSE-BERT/VECTOR-files/BERT-vectors/demo-vec-dim768.pkl
 
 !/LaBSE-BERT/VECTOR-files/DIM-reduction/test1*
-!/LaBSE-BERT/VECTOR-files/DIM-reduction/wiki-first-paragraph.pkl
-!/LaBSE-BERT/VECTOR-files/DIM-reduction/wiki-first-paragraph-old.pkl
+!/LaBSE-BERT/VECTOR-files/DIM-reduction/wiki-first-paragraph*
+!/LaBSE-BERT/VECTOR-files/DIM-reduction/demo-vec*
