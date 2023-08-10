@@ -89,5 +89,20 @@ To reduce the dimensionality of the vectors using the following algorithms:
     <li>Choose the relevant algorithm AND dimensionality.</li>
 </ul>
 
+# Clustering (K-means)
 
+## Choose Number of Clusters
+
+Using the `Elbow Method` we choose the number of clusters.
+<ul class="star">
+    <li>Make sure to uncomment/comment the code line.</li>
+</ul>
+
+## 3D Scatter Plotting
+
+We use `plotly` so make sure to install the packege:
+
+```
+$ pip install plotly
+```
 
