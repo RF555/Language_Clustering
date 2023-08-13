@@ -1,12 +1,12 @@
-import matplotlib.pyplot as plt
-
 from UtilityFunctions import *
 from sklearn.cluster import KMeans
 
 demo_vec = 'demo-vec'
 test1 = 'test1'
+first_par = 'wiki-first-paragraph'
+old_first_par = 'wiki-first-paragraph-old'
 
-curr_in = test1
+curr_in = first_par
 
 _input = 'VECTOR-files/DIM-reduction/' + curr_in + '(PCA)-dim3'
 
@@ -32,9 +32,9 @@ def kmeansElbowMethod(data, top_range):
 
 if __name__ == '__main__':
     word_keys, vector_df = pklToDF(_input)
-    # kmeansElbowMethod(data=vector_df, top_range=20)
+    # kmeansElbowMethod(data=vector_df, top_range=100)
 
-    kmeans = KMeans(n_clusters=10, n_init="auto")
+    kmeans = KMeans(n_clusters=40, n_init="auto")
     kmeans.fit(vector_df)
     id_clusters = kmeans.fit_predict(vector_df)
     clustered_data = vector_df.copy()
