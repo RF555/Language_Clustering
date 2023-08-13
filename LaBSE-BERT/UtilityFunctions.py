@@ -45,8 +45,13 @@ def dictToPkl(word_dict: dict, output_path: str):
 def plotlyGraph3D(curr_data, labels):
     Scene = dict(xaxis=dict(title='X -->'), yaxis=dict(title='Y -->'),
                  zaxis=dict(title='Z -->'))
-    trace = go.Scatter3d(x=curr_data[0], y=curr_data[1], z=curr_data[2], mode='markers',
-                         marker=dict(color=labels, size=10, line=dict(color='black', width=10)))
+    trace = go.Scatter3d(x=curr_data[0], y=curr_data[1], z=curr_data[2],
+                         mode='markers',
+                         marker=dict(color=labels,
+                                     size=5,
+                                     colorscale='Viridis',  # change colors
+                                     line=dict(color='black', width=10))
+                         )
     layout = go.Layout(margin=dict(l=0, r=0), scene=Scene, height=800, width=800)
     data = [trace]
     fig = go.Figure(data=data, layout=layout)

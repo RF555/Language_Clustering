@@ -34,7 +34,7 @@ if __name__ == '__main__':
     word_keys, vector_df = pklToDF(_input)
     # kmeansElbowMethod(data=vector_df, top_range=100)
 
-    kmeans = KMeans(n_clusters=40, n_init="auto")
+    kmeans = KMeans(n_clusters=20, n_init="auto")
     kmeans.fit(vector_df)
     id_clusters = kmeans.fit_predict(vector_df)
     clustered_data = vector_df.copy()
