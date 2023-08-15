@@ -11,10 +11,11 @@ first_par = 'wiki-first-paragraph'
 old_fil9 = 'fil9-old'
 old_first_par = 'wiki-first-paragraph-old'
 
-curr_in = old_first_par
+curr_in = first_par
+reduct_to = 3
 
 _input = 'VECTOR-files/BERT-vectors/' + curr_in + '-dim768'
-_output = 'VECTOR-files/DIM-reduction/' + curr_in
+_output = 'VECTOR-files/Reduct-to-' + str(reduct_to) + 'D/' + curr_in
 
 
 def reductPCA(n_components):
@@ -38,7 +39,7 @@ def reductPCA(n_components):
 if __name__ == '__main__':
     word_keys, vector_df = pklToDF(_input + '.pkl')
 
-    reducted_data = reductPCA(3)
+    reducted_data = reductPCA(reduct_to)
 
     # plotGraph2D(reducted_data)
     # pyplotGraph3D(reducted_data)
