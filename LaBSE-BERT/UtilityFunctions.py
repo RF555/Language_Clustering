@@ -3,7 +3,11 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-import plotly.graph_objs as go
+import plotly.express as px
+import plotly.figure_factory as ff
+import plotly.graph_objects as go
+
+import plotly.graph_objs
 
 
 def DFtoDict(word_keys, vector_df):
@@ -42,18 +46,36 @@ def dictToPkl(word_dict: dict, output_path: str):
         pickle.dump(word_dict, file, protocol=pickle.HIGHEST_PROTOCOL)
 
 
+# def plotlyGraph2D(curr_data, labels):
+def plotlyGraph3D2(curr_data, labels):
+    fig = px.scatter_3d(curr_data, x=0, y=1, z=2,
+                        color=curr_data['Cluster'],
+                        opacity=0.5,
+                        hover_name='Cluster'
+                        )
+    fig.show()
+
+
 def plotlyGraph3D(curr_data, labels):
-    Scene = dict(xaxis=dict(title='X -->'), yaxis=dict(title='Y -->'),
-                 zaxis=dict(title='Z -->'))
+    axes_label = dict(xaxis=dict(title='X -->'), yaxis=dict(title='Y -->'),
+                      zaxis=dict(title='Z -->'))
+    marker = dict(color=curr_data['Cluster'],
+                  size=5,
+                  colorscale='Viridis',  # change colors
+                  line=dict(color='black', width=10))
     trace = go.Scatter3d(x=curr_data[0], y=curr_data[1], z=curr_data[2],
                          mode='markers',
-                         marker=dict(color=labels,
-                                     size=5,
-                                     colorscale='Viridis',  # change colors
-                                     line=dict(color='black', width=10))
+                         marker=marker,
+                         hovertemplate='Word: <b>%{text}</b>'
+                                       '<br>x: %{x}'
+                                       '<br>y: %{y}'
+                                       '<br>z: %{z}'
+                                       # '<b><br>cluster: %{color}</b>'
+                                       '<extra></extra>',
+                         text=[word for word in curr_data.word]
                          )
-    layout = go.Layout(margin=dict(l=0, r=0), scene=Scene, height=800, width=800)
     data = [trace]
+    layout = go.Layout(margin=dict(l=0, r=0, t=0), scene=axes_label, height=800, width=800)
     fig = go.Figure(data=data, layout=layout)
     fig.show()
 

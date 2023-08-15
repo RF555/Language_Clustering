@@ -8,7 +8,7 @@ old_first_par = 'wiki-first-paragraph-old'
 
 curr_in = first_par
 
-_input = 'VECTOR-files/DIM-reduction/' + curr_in + '(PCA)-dim3'
+_input = 'VECTOR-files/Reduct-to-3D/' + curr_in + '(PCA)-dim3'
 
 
 def kmeansElbowMethod(data, top_range):
@@ -32,11 +32,13 @@ def kmeansElbowMethod(data, top_range):
 
 if __name__ == '__main__':
     word_keys, vector_df = pklToDF(_input)
+
     # kmeansElbowMethod(data=vector_df, top_range=100)
 
     kmeans = KMeans(n_clusters=20, n_init="auto")
     kmeans.fit(vector_df)
     id_clusters = kmeans.fit_predict(vector_df)
     clustered_data = vector_df.copy()
+    clustered_data['word']=word_keys
     clustered_data['Cluster'] = id_clusters
     plotlyGraph3D(clustered_data, kmeans.labels_)
