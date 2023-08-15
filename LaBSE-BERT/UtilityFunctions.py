@@ -66,13 +66,20 @@ def plotlyGraph3D(curr_data, labels):
     trace = go.Scatter3d(x=curr_data[0], y=curr_data[1], z=curr_data[2],
                          mode='markers',
                          marker=marker,
-                         hovertemplate='Word: <b>%{text}</b>'
-                                       '<br>x: %{x}'
-                                       '<br>y: %{y}'
-                                       '<br>z: %{z}'
-                                       # '<b><br>cluster: %{color}</b>'
-                                       '<extra></extra>',
-                         text=[word for word in curr_data.word]
+                         # hovertemplate=['<b>{0}</b><br>'
+                         #                'Cluster: {1}<br>'
+                         #                'x: {2}<br>'
+                         #                'y: {3}<br>'
+                         #                'z: {4}<br>'.format(w, c, _x, _y, _z)
+                         #                for w, c, _x, _y, _z in zip(curr_data['word'],
+                         #                                            curr_data['Cluster'],
+                         #                                            curr_data[0],
+                         #                                            curr_data[1],
+                         #                                            curr_data[2])]
+                         hovertext=['<b>{0}</b><br>'
+                                    'Cluster: {1}'.format(w, c)
+                                    for w, c in zip(curr_data['word'],
+                                                    curr_data['Cluster'])]
                          )
     data = [trace]
     layout = go.Layout(margin=dict(l=0, r=0, t=0), scene=axes_label, height=800, width=800)
