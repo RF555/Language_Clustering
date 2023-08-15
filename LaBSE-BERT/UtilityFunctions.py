@@ -3,11 +3,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-import plotly.express as px
-import plotly.figure_factory as ff
 import plotly.graph_objects as go
-
-import plotly.graph_objs
 
 
 def DFtoDict(word_keys, vector_df):
@@ -44,16 +40,6 @@ def dictToPkl(word_dict: dict, output_path: str):
         output_path += '.pkl'
     with open(output_path, 'wb') as file:
         pickle.dump(word_dict, file, protocol=pickle.HIGHEST_PROTOCOL)
-
-
-# def plotlyGraph2D(curr_data, labels):
-def plotlyGraph3D2(curr_data, labels):
-    fig = px.scatter_3d(curr_data, x=0, y=1, z=2,
-                        color=curr_data['Cluster'],
-                        opacity=0.5,
-                        hover_name='Cluster'
-                        )
-    fig.show()
 
 
 def plotlyGraph3D(curr_data, labels):
