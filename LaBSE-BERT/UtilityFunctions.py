@@ -73,7 +73,10 @@ def plotly_graph_2d_scatter(data, x_label='X -->', y_label='Y -->', cluster=Fals
                                   for w, c in zip(data['word'],
                                                   data['Cluster'])]
                        )
-    fig = go.Figure(data=[trace])  # , layout=layout)
+    fig = go.Figure(data=[trace])
+    fig.update_layout(xaxis_title=x_label,
+                      yaxis_title=y_label)
+
     fig.show()
 
 
@@ -102,8 +105,9 @@ def plotly_graph_3d_clusters(data):
                                     for w, c in zip(data['word'],
                                                     data['Cluster'])]
                          )
-    # layout = go.Layout(margin=dict(l=0, r=0, t=0), scene=axes_label)
-    fig = go.Figure(data=[trace])  # , layout=layout)
+    layout = go.Layout(margin=dict(b=0, t=0), scene=axes_label)
+    fig = go.Figure(data=[trace], layout=layout)
+
     fig.show()
 
 

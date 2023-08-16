@@ -7,9 +7,9 @@ first_par = 'wiki-first-paragraph'
 old_first_par = 'wiki-first-paragraph-old'
 
 curr_in = test1
-curr_dim = '2'
+curr_dim = '3'
 
-_input = 'VECTOR-files/Reduct-to-' + curr_dim + 'D/' + curr_in + '(PCA)-dim'+curr_dim
+_input = 'VECTOR-files/Reduct-to-' + curr_dim + 'D/' + curr_in + '(PCA)-dim' + curr_dim
 
 
 def kmeans_elbow_method(data):
@@ -53,5 +53,5 @@ if __name__ == '__main__':
     clustered_data['word'] = word_keys
     clustered_data['Cluster'] = id_clusters
 
-    plotly_graph_2d_scatter(data=clustered_data, cluster=True)
-    # plotly_graph_3d_clusters(clustered_data)
+    # plotly_graph_2d_scatter(data=clustered_data, cluster=True)
+    plotly_graph_3d_clusters(clustered_data)
