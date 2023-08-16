@@ -41,10 +41,11 @@ if __name__ == '__main__':
 
     reducted_data = reduct_pca(reduct_to)
 
-    # plotGraph2D(reducted_data)
-    # pyplotGraph3D(reducted_data)
+    # pyplot_graph_2d_scatter(data=reducted_data,
+    #                         x_label='First principle component',
+    #                         y_label='Second principle component')
+    # pyplot_graph_3d(reducted_data)
 
     updated_output = _output + '-dim' + str(reducted_data[0].size)
-    dict_to_pkl(word_dict=dataframe_to_dict(word_keys=word_keys,
-                                            vector_df=pd.DataFrame(reducted_data)),
+    dict_to_pkl(word_dict=dataframe_to_dict(word_keys=word_keys, vector_df=pd.DataFrame(reducted_data)),
                 output_path=updated_output)

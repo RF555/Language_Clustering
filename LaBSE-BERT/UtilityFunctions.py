@@ -43,7 +43,34 @@ def dict_to_pkl(word_dict: dict, output_path: str):
         pickle.dump(word_dict, file, protocol=pickle.HIGHEST_PROTOCOL)
 
 
-def plotly_graph_3d(curr_data, labels):
+def plotly_graph_2d(curr_data, x_label='X -->', y_label='Y -->'):
+    trace = go.Scatter(x=curr_data[0], y=curr_data[1],
+                       mode='lines+markers',
+                       hovertext=['Num of Clusters: {0}<br>'
+                                  'WCSS: {1}'.format(clusters, wcss)
+                                  for clusters, wcss in zip(curr_data[0],
+                                                            curr_data[1])]
+                       )
+    data = [trace]
+    fig = go.Figure(data=data)
+    fig.update_layout(xaxis_title=x_label,
+                      yaxis_title=y_label)
+
+    fig.show()
+
+
+def plotly_graph_2d_scatter(curr_data, x_label='X -->', y_label='Y -->'):
+    trace = go.Scatter(x=curr_data[0], y=curr_data[1],
+                       mode='markers',
+                       hovertext=['<b>{0}</b><br>'
+                                  'Cluster: {1}'.format(w, c)
+                                  for w, c in zip(curr_data['word'],
+                                                  curr_data['Cluster'])]
+                       )
+
+
+
+def plotly_graph_3d_clusters(curr_data):
     axes_label = dict(xaxis=dict(title='X -->'), yaxis=dict(title='Y -->'),
                       zaxis=dict(title='Z -->'))
     marker = dict(color=curr_data['Cluster'],
@@ -69,8 +96,8 @@ def plotly_graph_3d(curr_data, labels):
                                                     curr_data['Cluster'])]
                          )
     data = [trace]
-    layout = go.Layout(margin=dict(l=0, r=0, t=0), scene=axes_label, height=800, width=800)
-    fig = go.Figure(data=data, layout=layout)
+    # layout = go.Layout(margin=dict(l=0, r=0, t=0), scene=axes_label)
+    fig = go.Figure(data=data)  # , layout=layout)
     fig.show()
 
 
@@ -86,11 +113,20 @@ def pyplot_graph_3d(curr_data):
     plt.show()
 
 
-def pyplot_graph_2d(curr_data):
+def pyplot_graph_2d(data, x_label, y_label, title='2D Graph Plot'):
+    plt.plot(data[0], data[1])
+    plt.title('The Elbow Method')
+    plt.xlabel('Number of clusters')
+    plt.ylabel('Within-cluster Sum of Squers')
+
+    plt.show()
+
+
+def pyplot_graph_2d_scatter(data, x_label, y_label, title='2D Scatter Plot'):
     plt.figure(figsize=(8, 6))
-    plt.scatter(curr_data[:, 0], curr_data[:, 1])
-    plt.title("2D scatter plot")
-    plt.xlabel('First principle component', fontweight='bold')
-    plt.ylabel('Second principle component', fontweight='bold')
+    plt.scatter(data[:, 0], data[:, 1])
+    plt.title(title)
+    plt.xlabel(x_label, fontweight='bold')
+    plt.ylabel(y_label, fontweight='bold')
 
     plt.show()
