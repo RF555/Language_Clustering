@@ -43,41 +43,48 @@ def dict_to_pkl(word_dict: dict, output_path: str):
         pickle.dump(word_dict, file, protocol=pickle.HIGHEST_PROTOCOL)
 
 
-def plotly_graph_2d(curr_data, x_label='X -->', y_label='Y -->'):
-    trace = go.Scatter(x=curr_data[0], y=curr_data[1],
+def plotly_graph_2d(data, x_label='X -->', y_label='Y -->'):
+    trace = go.Scatter(x=data[0], y=data[1],
                        mode='lines+markers',
                        hovertext=['Num of Clusters: {0}<br>'
                                   'WCSS: {1}'.format(clusters, wcss)
-                                  for clusters, wcss in zip(curr_data[0],
-                                                            curr_data[1])]
+                                  for clusters, wcss in zip(data[0],
+                                                            data[1])]
                        )
-    data = [trace]
-    fig = go.Figure(data=data)
+    fig = go.Figure(data=[trace])
     fig.update_layout(xaxis_title=x_label,
                       yaxis_title=y_label)
 
     fig.show()
 
 
-def plotly_graph_2d_scatter(curr_data, x_label='X -->', y_label='Y -->'):
-    trace = go.Scatter(x=curr_data[0], y=curr_data[1],
+def plotly_graph_2d_scatter(data, x_label='X -->', y_label='Y -->', cluster=False):
+    marker = dict()
+    if cluster:
+        marker = dict(color=data['Cluster'],
+                      size=7,
+                      colorscale='Viridis'  # change colors
+                      )
+    trace = go.Scatter(x=data[0], y=data[1],
                        mode='markers',
+                       marker=marker,
                        hovertext=['<b>{0}</b><br>'
                                   'Cluster: {1}'.format(w, c)
-                                  for w, c in zip(curr_data['word'],
-                                                  curr_data['Cluster'])]
+                                  for w, c in zip(data['word'],
+                                                  data['Cluster'])]
                        )
+    fig = go.Figure(data=[trace])  # , layout=layout)
+    fig.show()
 
 
-
-def plotly_graph_3d_clusters(curr_data):
+def plotly_graph_3d_clusters(data):
     axes_label = dict(xaxis=dict(title='X -->'), yaxis=dict(title='Y -->'),
                       zaxis=dict(title='Z -->'))
-    marker = dict(color=curr_data['Cluster'],
+    marker = dict(color=data['Cluster'],
                   size=5,
                   colorscale='Viridis',  # change colors
                   line=dict(color='black', width=10))
-    trace = go.Scatter3d(x=curr_data[0], y=curr_data[1], z=curr_data[2],
+    trace = go.Scatter3d(x=data[0], y=data[1], z=data[2],
                          mode='markers',
                          marker=marker,
                          # hovertemplate=['<b>{0}</b><br>'
@@ -92,12 +99,11 @@ def plotly_graph_3d_clusters(curr_data):
                          #                                            curr_data[2])]
                          hovertext=['<b>{0}</b><br>'
                                     'Cluster: {1}'.format(w, c)
-                                    for w, c in zip(curr_data['word'],
-                                                    curr_data['Cluster'])]
+                                    for w, c in zip(data['word'],
+                                                    data['Cluster'])]
                          )
-    data = [trace]
     # layout = go.Layout(margin=dict(l=0, r=0, t=0), scene=axes_label)
-    fig = go.Figure(data=data)  # , layout=layout)
+    fig = go.Figure(data=[trace])  # , layout=layout)
     fig.show()
 
 

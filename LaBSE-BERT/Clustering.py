@@ -6,9 +6,10 @@ test1 = 'test1'
 first_par = 'wiki-first-paragraph'
 old_first_par = 'wiki-first-paragraph-old'
 
-curr_in = first_par
+curr_in = test1
+curr_dim = '2'
 
-_input = 'VECTOR-files/Reduct-to-3D/' + curr_in + '(PCA)-dim3'
+_input = 'VECTOR-files/Reduct-to-' + curr_dim + 'D/' + curr_in + '(PCA)-dim'+curr_dim
 
 
 def kmeans_elbow_method(data):
@@ -35,7 +36,7 @@ def kmeans_elbow_method(data):
         wcss.append(wcss_iter)
         curr_range += 1
 
-    plotly_graph_2d(curr_data=[list(range(1, curr_range)), wcss],
+    plotly_graph_2d(data=[list(range(1, curr_range)), wcss],
                     x_label='Number of clusters',
                     y_label='Within-cluster Sum of Squers (WCSS)')
 
@@ -51,4 +52,6 @@ if __name__ == '__main__':
     clustered_data = vector_df.copy()
     clustered_data['word'] = word_keys
     clustered_data['Cluster'] = id_clusters
-    plotly_graph_3d_clusters(clustered_data)
+
+    plotly_graph_2d_scatter(data=clustered_data, cluster=True)
+    # plotly_graph_3d_clusters(clustered_data)
