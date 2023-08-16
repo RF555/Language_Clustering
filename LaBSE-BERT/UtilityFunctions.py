@@ -6,8 +6,8 @@ import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 
 
-def DFtoDict(word_keys, vector_df):
-    word_list = list(word_keys['Words'])
+def dataframe_to_dict(word_keys, vector_df):
+    word_list = list(word_keys['Word'])
     word_dict = dict()
 
     for i, vec in vector_df.iterrows():
@@ -16,15 +16,16 @@ def DFtoDict(word_keys, vector_df):
     return word_dict
 
 
-def pklToDF(input_path: str):
+def pkl_to_dataframe(input_path: str):
     if not input_path.endswith('.pkl'):
         input_path += '.pkl'
     with open(input_path, "rb") as file:
         loaded_dict = pickle.load(file)
 
     word_keys = pd.DataFrame(loaded_dict.keys())
-    word_keys.rename(columns={0: 'Words'}, inplace=True)
+    word_keys.rename(columns={0: 'Word'}, inplace=True)
     vector_arr = np.array(loaded_dict[list(loaded_dict.keys())[0]])
+
     for key in loaded_dict.keys():
 
         if key != list(loaded_dict.keys())[0]:
@@ -35,14 +36,14 @@ def pklToDF(input_path: str):
     return word_keys, vector_df
 
 
-def dictToPkl(word_dict: dict, output_path: str):
+def dict_to_pkl(word_dict: dict, output_path: str):
     if not output_path.endswith('.pkl'):
         output_path += '.pkl'
     with open(output_path, 'wb') as file:
         pickle.dump(word_dict, file, protocol=pickle.HIGHEST_PROTOCOL)
 
 
-def plotlyGraph3D(curr_data, labels):
+def plotly_graph_3d(curr_data, labels):
     axes_label = dict(xaxis=dict(title='X -->'), yaxis=dict(title='Y -->'),
                       zaxis=dict(title='Z -->'))
     marker = dict(color=curr_data['Cluster'],
@@ -73,7 +74,7 @@ def plotlyGraph3D(curr_data, labels):
     fig.show()
 
 
-def pyplotGraph3D(curr_data):
+def pyplot_graph_3d(curr_data):
     x = np.array(curr_data[0])
     y = np.array(curr_data[1])
     z = np.array(curr_data[2])
@@ -85,7 +86,7 @@ def pyplotGraph3D(curr_data):
     plt.show()
 
 
-def plotGraph2D(curr_data):
+def pyplot_graph_2d(curr_data):
     plt.figure(figsize=(8, 6))
     plt.scatter(curr_data[:, 0], curr_data[:, 1])
     plt.title("2D scatter plot")

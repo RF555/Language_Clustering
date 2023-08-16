@@ -4,7 +4,7 @@ from transformers import *
 import torch
 from sklearn.preprocessing import normalize
 
-from UtilityFunctions import dictToPkl
+from UtilityFunctions import dict_to_pkl
 
 test1 = 'test1'
 fil9 = 'fil9'
@@ -131,5 +131,5 @@ if __name__ == '__main__':
     first_word = list(word_dict.keys())[0]
     vec_dim = word_dict[first_word].size
     updated_output = _output + '-dim' + str(vec_dim)
-    dictToPkl(word_dict=word_dict, output_path=updated_output)
+    dict_to_pkl(word_dict=word_dict, output_path=updated_output)
 

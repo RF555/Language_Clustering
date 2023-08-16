@@ -11,14 +11,14 @@ first_par = 'wiki-first-paragraph'
 old_fil9 = 'fil9-old'
 old_first_par = 'wiki-first-paragraph-old'
 
-curr_in = first_par
+curr_in = test1
 reduct_to = 3
 
 _input = 'VECTOR-files/BERT-vectors/' + curr_in + '-dim768'
 _output = 'VECTOR-files/Reduct-to-' + str(reduct_to) + 'D/' + curr_in
 
 
-def reductPCA(n_components):
+def reduct_pca(n_components):
     # preprocessing data (scaling the data)
     my_scaler = skscaler.StandardScaler()
     # my_scaler=Scaler.MinMaxScaler() # another method of scaling
@@ -37,14 +37,14 @@ def reductPCA(n_components):
 
 
 if __name__ == '__main__':
-    word_keys, vector_df = pklToDF(_input + '.pkl')
+    word_keys, vector_df = pkl_to_dataframe(_input + '.pkl')
 
-    reducted_data = reductPCA(reduct_to)
+    reducted_data = reduct_pca(reduct_to)
 
     # plotGraph2D(reducted_data)
     # pyplotGraph3D(reducted_data)
 
     updated_output = _output + '-dim' + str(reducted_data[0].size)
-    dictToPkl(word_dict=DFtoDict(word_keys=word_keys,
-                                 vector_df=pd.DataFrame(reducted_data)),
-              output_path=updated_output)
+    dict_to_pkl(word_dict=dataframe_to_dict(word_keys=word_keys,
+                                            vector_df=pd.DataFrame(reducted_data)),
+                output_path=updated_output)
