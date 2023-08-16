@@ -33,7 +33,7 @@ def kmeans_elbow_method(data, top_range):
 if __name__ == '__main__':
     word_keys, vector_df = pkl_to_dataframe(_input)
 
-    elbow_range=(word_keys.size)
+    elbow_range = (word_keys.size)
     print(elbow_range)
     kmeans_elbow_method(data=vector_df, top_range=100)
 

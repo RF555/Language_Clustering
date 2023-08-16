@@ -8,7 +8,6 @@ curr_in = demo_vec
 _output = 'BERT-vectors/' + curr_in
 
 if __name__ == '__main__':
-
     word_dict = {}
     hi_vec = numpy.array([[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]])
     how_vec = numpy.array([[1, 1, 1, 1, 1, 1, 1, 1, 1, 1]])

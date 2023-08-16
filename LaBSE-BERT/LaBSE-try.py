@@ -132,4 +132,3 @@ if __name__ == '__main__':
     vec_dim = word_dict[first_word].size
     updated_output = _output + '-dim' + str(vec_dim)
     dict_to_pkl(word_dict=word_dict, output_path=updated_output)
-

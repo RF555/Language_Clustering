@@ -9,7 +9,6 @@ model = BertModel.from_pretrained("setu4993/LaBSE")
 model = model.eval()
 
 if __name__ == '__main__':
-
     # Test English Sentences
 
     # Tokenize words/sentences
@@ -39,4 +38,3 @@ if __name__ == '__main__':
 
     print("\nSentence Embeddings:\n")
     print(english_embeddings)
-
