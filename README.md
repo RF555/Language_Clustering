@@ -73,18 +73,26 @@ $ perl my-wikifil.pl data/enwik9 > data/fil9
 The data must be split to sentences. We do it by running the scropt `split-lines.py` that saves the current input files
 in the folder `split-output`.
 
-<ul class="star">
-  <li>Make sure to update the correct input and output!</li>
-</ul>
+* Make sure to update the correct input and output!
+
+[//]: # (<ul class="star">)
+
+[//]: # (  <li>Make sure to update the correct input and output!</li>)
+
+[//]: # (</ul>)
 
 # Generate ***WORD*** Vectors (to `.pkl` file)
 
 To create ***word*** vectors from all words in the text, run the main function of the script `LaBSE-try.py` which will
 generate the word vectors and will save them as a `.pkl` file.
 
-<ul class="star">
-    <li>Make sure to update the correct input and output!</li>
-</ul>
+* Make sure to update the correct input and output!
+
+[//]: # (<ul class="star">)
+
+[//]: # (    <li>Make sure to update the correct input and output!</li>)
+
+[//]: # (</ul>)
 
 The object saved to the `.pkl` file will be a dictionary with words as keys, and vectors of type `numpy.ndarray` as
 values.
@@ -94,20 +102,30 @@ values.
 To reduce the dimensionality of the vectors using the following algorithms:
 
 * PCA
+    * Make sure to update the correct input and output!
+    * Choose the relevant algorithm AND dimensionality.
 
-<ul class="star">
-    <li>Make sure to update the correct input and output!</li>
-    <li>Choose the relevant algorithm AND dimensionality.</li>
-</ul>
+[//]: # (<ul class="star">)
+
+[//]: # (    <li>Make sure to update the correct input and output!</li>)
+
+[//]: # (    <li>Choose the relevant algorithm AND dimensionality.</li>)
+
+[//]: # (</ul>)
 
 # Clustering (K-means)
 
 ## Choose Number of Clusters
 
 Using the `Elbow Method` we choose the number of clusters.
-<ul class="star">
-    <li>Make sure to uncomment/comment the code line.</li>
-</ul>
+
+* Make sure to uncomment/comment the code line.
+
+[//]: # (<ul class="star">)
+
+[//]: # (    <li>Make sure to uncomment/comment the code line.</li>)
+
+[//]: # (</ul>)
 
 ## 3D Scatter Plotting
 
