@@ -6,9 +6,11 @@ test1 = 'test1'
 first_par = 'wiki-first-paragraph'
 old_first_par = 'wiki-first-paragraph-old'
 
+# Choose the current file to use as input
 curr_in = test1
 curr_dim = '3'
 
+# Path to the current file used as input
 _input = 'VECTOR-files/Reduct-to-' + curr_dim + 'D/' + curr_in + '(PCA)-dim' + curr_dim
 
 

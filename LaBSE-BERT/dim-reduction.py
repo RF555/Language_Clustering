@@ -11,15 +11,22 @@ first_par = 'wiki-first-paragraph'
 old_fil9 = 'fil9-old'
 old_first_par = 'wiki-first-paragraph-old'
 
+# Choose the current file to use as input
 curr_in = test1
-reduct_to = 3
+reduct_dim_to = 3
 
+# Path to the current file used as input/output
 _input = 'VECTOR-files/BERT-vectors/' + curr_in + '-dim768'
-_output = 'VECTOR-files/Reduct-to-' + str(reduct_to) + 'D/' + curr_in
+_output = 'VECTOR-files/Reduct-to-' + str(reduct_dim_to) + 'D/' + curr_in
 
 
 def reduct_pca(n_components):
-    # preprocessing data (scaling the data)
+    """
+    Reduce the dimensionality of the voctors using the PCA algorithm.
+    @param n_components: Reduce the dimensionality of the vector to.
+    @return: The data with reduced dimensionality.
+    """
+    # Preprocessing data (scaling the data)
     my_scaler = skscaler.StandardScaler()
     # my_scaler=Scaler.MinMaxScaler() # another method of scaling
 
@@ -39,7 +46,8 @@ def reduct_pca(n_components):
 if __name__ == '__main__':
     word_keys, vector_df = pkl_to_dataframe(_input + '.pkl')
 
-    reducted_data = reduct_pca(reduct_to)
+    # Reduce the dimension of the original vectors
+    reducted_data = reduct_pca(reduct_dim_to)
 
     # pyplot_graph_2d_scatter(data=reducted_data,
     #                         x_label='First principle component',
