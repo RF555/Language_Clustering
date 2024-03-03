@@ -1,15 +1,26 @@
-<style>
-ul.star{list-style: none;}
-ul.star li::before{
-    content: "\272A";
-    color: orange;
-    font-weight: bold;
-    font-size: 18px;
-    display: inline-block; 
-    width: 1.5em;
-    margin-left: 1em;
-}
-</style>
+[//]: # (<style>)
+
+[//]: # (ul.star{list-style: none;})
+
+[//]: # (ul.star li::before{)
+
+[//]: # (    content: "\272A";)
+
+[//]: # (    color: orange;)
+
+[//]: # (    font-weight: bold;)
+
+[//]: # (    font-size: 18px;)
+
+[//]: # (    display: inline-block; )
+
+[//]: # (    width: 1.5em;)
+
+[//]: # (    margin-left: 1em;)
+
+[//]: # (})
+
+[//]: # (</style>)
 
 # Language_Clustering
 
