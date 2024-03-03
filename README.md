@@ -130,6 +130,11 @@ Using the `Elbow Method` we choose the number of clusters.
 [//]: # (    <li>Make sure to uncomment/comment the code line.</li>)
 
 [//]: # (</ul>)
+### Elbow Method 2D Plot Example of ```test1```
+<p align="center">
+  <img src="docs/test1_dim3_elbow_plot.png">
+</p>
+
 
 ## 3D Scatter Plotting
 
@@ -138,4 +143,8 @@ We use `plotly` so make sure to install the packege:
 ```
 $ pip install plotly
 ```
+### 3D Scatter Plot Example of ```test1```
+<p align="center">
+  <img src="docs/test1_dim3_KMeans_20clusters_plot.png">
+</p>
 
