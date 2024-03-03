@@ -81,7 +81,11 @@ in the folder `split-output`.
 
 [//]: # (</ul>)
 
-# Generate ***WORD*** Vectors (to `.pkl` file)
+# Preparing The Data
+
+The preparation of the data and saving it as a `.pkl` file.
+
+## Generate ***WORD*** Vectors
 
 To create ***word*** vectors from all words in the text, run the main function of the script `LaBSE-try.py` which will
 generate the word vectors and will save them as a `.pkl` file.
