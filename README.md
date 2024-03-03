@@ -22,7 +22,7 @@
 
 [//]: # (</style>)
 
-# Language_Clustering
+# Language Clustering
 
 ## Installs
 
