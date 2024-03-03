@@ -99,7 +99,7 @@ values.
 
 ## Dimension Reduction
 
-To reduce the dimensionality of the vectors using the following algorithms:
+Reduce the dimensionality of the vectors using the following algorithms:
 
 * PCA
     * Make sure to update the correct input and output!
