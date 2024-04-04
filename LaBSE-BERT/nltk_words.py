@@ -1,6 +1,6 @@
 import nltk
 from nltk.corpus import words
-from LaBSE_try import get_vec, add_to_word_dict, word_dict
+from LaBSE_try import add_to_word_dict, word_dict
 from UtilityFunctions import dict_to_pkl
 
 _output = 'VECTOR-files/BERT-vectors/nltk'

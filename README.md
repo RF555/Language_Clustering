@@ -30,15 +30,17 @@
 
 Follow the instructions from the [Hugging Face website](https://huggingface.co/docs/transformers/installation).
 
-# Download English Wikipedia pages
+# 2 Data Options
+
+## *First Option:* Download English Wikipedia pages
 
 You can either download the full Wikipedia English data or the partial data.
 
 (we will use the partial data).
 
-## Download Options
+### Download Options
 
-### Partial Data
+#### Partial Data
 
 To download all the first 1 billion bytes of English Wikipedia, run the following command:
 
@@ -48,7 +50,7 @@ $ wget -c http://mattmahoney.net/dc/enwik9.zip -P data
 $ unzip data/enwik9.zip -d data
 ```
 
-### Full Data
+#### Full Data
 
 To download all the English Wikipedia pages, run the following command:
 
@@ -56,9 +58,7 @@ To download all the English Wikipedia pages, run the following command:
 $ wget https://dumps.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xml.bz2
 ```
 
-# Prepering The Data
-
-## Pre-process Using `my-wikifil.pl`
+### Pre-process Using `my-wikifil.pl`
 
 A raw Wikipedia dump contains a lot of HTML / XML data.
 We pre-process it with the wikifil.pl script
@@ -68,7 +68,7 @@ We pre-process it with the wikifil.pl script
 $ perl my-wikifil.pl data/enwik9 > data/fil9
 ```
 
-## Split Sentences
+### Split Sentences
 
 The data must be split to sentences. We do it by running the scropt `split-lines.py` that saves the current input files
 in the folder `split-output`.
@@ -81,14 +81,22 @@ in the folder `split-output`.
 
 [//]: # (</ul>)
 
+## *Second Option:* NLTK Corpus
+
+Getting all the words in the NLTK corpus.
+
+### Download the Corpus *(First time only!)*
+
+Make sure to uncomment `nltk.download('words')`
+
 # Preparing The Data
 
 The preparation of the data and saving it as a `.pkl` file.
 
 ## Generate ***WORD*** Vectors
 
-To create ***word*** vectors from all words in the text, run the main function of the script `LaBSE-try.py` which will
-generate the word vectors and will save them as a `.pkl` file.
+To create ***word*** vectors from all words in the text, run the main function of either scripts `LaBSE-try.py`
+***or*** `nltk_words.py` which will generate the word vectors and will save them as a `.pkl` file.
 
 * Make sure to update the correct input and output!
 
@@ -130,11 +138,12 @@ Using the `Elbow Method` we choose the number of clusters.
 [//]: # (    <li>Make sure to uncomment/comment the code line.</li>)
 
 [//]: # (</ul>)
+
 ### Elbow Method 2D Plot Example of ```test1```
+
 <p align="center">
   <img src="docs/test1_dim3_elbow_plot.png">
 </p>
-
 
 ## 3D Scatter Plotting
 
@@ -143,7 +152,9 @@ We use `plotly` so make sure to install the packege:
 ```
 $ pip install plotly
 ```
+
 ### 3D Scatter Plot Example of ```test1```
+
 <p align="center">
   <img src="docs/test1_dim3_KMeans_20clusters_plot.png">
 </p>
