@@ -25,7 +25,6 @@ plotly_graph_2d_scatter(data=clustered_data, subplot={"centroids": centroids_},
                         cluster=True)
 
 closest_ids, _ = pairwise_distances_argmin_min(centroids_, X)
-# X_=X[1][0],X[1][1]
 X_np = X.to_numpy()
 closest_points = [X_np[i] for i in closest_ids]
 closest_points = pd.DataFrame(closest_points)
