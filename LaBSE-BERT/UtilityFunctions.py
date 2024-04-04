@@ -4,6 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 import plotly.graph_objects as go
+from plotly.subplots import make_subplots
 
 
 def dataframe_to_dict(word_keys, vector_df):
@@ -58,22 +59,35 @@ def plotly_graph_2d(data, x_label='X -->', y_label='Y -->'):
     fig.show()
 
 
-def plotly_graph_2d_scatter(data, x_label='X -->', y_label='Y -->', cluster=False):
-    marker = dict()
-    if cluster:
-        marker = dict(color=data['Cluster'],
-                      size=7,
-                      colorscale='Viridis'  # change colors
-                      )
-    trace = go.Scatter(x=data[0], y=data[1],
-                       mode='markers',
-                       marker=marker,
-                       hovertext=['<b>{0}</b><br>'
-                                  'Cluster: {1}'.format(w, c)
-                                  for w, c in zip(data['word'],
-                                                  data['Cluster'])]
-                       )
-    fig = go.Figure(data=[trace])
+def plotly_graph_2d_scatter(data=None, subplot=None, x_label='X -->', y_label='Y -->', cluster=False):
+    fig = make_subplots(specs=[[{"secondary_y": True}]])
+    if data is not None:
+        marker = dict()
+        if cluster:
+            marker = dict(color=data['Cluster'],
+                          size=7,
+                          colorscale='Viridis'  # change colors
+                          )
+        trace1 = go.Scatter(x=data[0], y=data[1],
+                            mode='markers',
+                            marker=marker,
+                            hovertext=['<b>{0}</b><br>'
+                                       'Cluster: {1}'.format(w, c)
+                                       for w, c in zip(data['word'],
+                                                       data['Cluster'])]
+                            )
+
+        fig.add_trace(trace1)
+
+    if subplot is not None:
+        marker2 = dict(size=10)
+        for i, (discription, subplot_i) in enumerate(subplot.items()):
+            trace2 = go.Scatter(x=subplot_i[0], y=subplot_i[1],
+                                mode='markers',
+                                marker=marker2,
+                                hovertext='<b>' + discription + '</b>')
+            fig.add_trace(trace2)
+
     fig.update_layout(xaxis_title=x_label,
                       yaxis_title=y_label)
 
