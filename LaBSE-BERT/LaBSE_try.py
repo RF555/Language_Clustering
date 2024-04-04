@@ -76,13 +76,13 @@ def add_to_word_dict(word, pre_sign='none', post_sign='none'):
         # word_df = pd.concat([word_df, df])
 
         if pre_sign != 'none' and post_sign != 'none':
-            print(word, "\t(Without surrounding '", pre_sign, "')")
+            print(f'[{len(word_dict)}]: {word}\t(Without surrounding \'{pre_sign}\')')
         elif pre_sign != 'none':
-            print(word, "\t(Without pre '", pre_sign, "')")
+            print(f'[{len(word_dict)}]: {word}\t(Without pre \'{pre_sign}\')')
         elif post_sign != 'none':
-            print(word, "\t(Without post '", post_sign, "')")
+            print(f'[{len(word_dict)}]: {word}\t(Without post \'{post_sign}\')')
         else:
-            print(word)
+            print(f'[{len(word_dict)}]: {word}')
 
 
 def check_sign(word):
