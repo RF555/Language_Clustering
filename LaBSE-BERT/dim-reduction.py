@@ -44,7 +44,9 @@ def reduct_pca(n_components):
 
 
 if __name__ == '__main__':
-    word_keys, vector_df = pkl_to_dataframe(_input + '.pkl')
+    if not _input.endswith('.pkl'):
+        _input += '.pkl'
+    word_keys, vector_df = pkl_to_dataframe(_input)
 
     # Reduce the dimension of the original vectors
     reducted_data = reduct_pca(reduct_dim_to)
