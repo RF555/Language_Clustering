@@ -30,6 +30,7 @@ def pkl_to_dataframe(input_path: str):
     for key in loaded_dict.keys():
 
         if key != list(loaded_dict.keys())[0]:
+            # print(f'[{len(vector_arr)}] {key}')
             vector_arr = np.vstack((vector_arr, loaded_dict[key]))
 
     vector_df = pd.DataFrame(vector_arr)
