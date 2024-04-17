@@ -1,4 +1,4 @@
-from UtilityFunctions import plotly_graph_2d_scatter, pd, np
+from LaBSE_BERT.UtilityFunctions import plotly_graph_2d_scatter, pd, np
 
 from sklearn.cluster import KMeans
 from sklearn.metrics import pairwise_distances_argmin_min

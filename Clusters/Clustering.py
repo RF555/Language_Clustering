@@ -1,4 +1,4 @@
-from UtilityFunctions import *
+from LaBSE_BERT.UtilityFunctions import *
 from sklearn.cluster import KMeans
 
 demo_vec = 'demo-vec'
