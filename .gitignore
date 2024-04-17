@@ -132,29 +132,29 @@ dmypy.json
 .idea
 
 # Ignore Large Data Files
-/LaBSE-BERT/data/*
-/LaBSE-BERT/split-output/*
-/LaBSE-BERT/VECTOR-files/BERT-vectors/*
-/LaBSE-BERT/VECTOR-files/Reduct-to-2D/*
-/LaBSE-BERT/VECTOR-files/Reduct-to-3D/*
+/LaBSE_BERT/data/*
+/LaBSE_BERT/split_output/*
+/LaBSE_BERT/VECTOR_files/BERT_vectors/*
+/LaBSE_BERT/VECTOR_files/Reduct-to-2D/*
+/LaBSE_BERT/VECTOR_files/Reduct-to-3D/*
 
 # Include Smaller Data Files
-!/LaBSE-BERT/data/wiki-first-paragraph-old
-!/LaBSE-BERT/data/wiki-first-paragraph
+!/LaBSE_BERT/data/wiki-first-paragraph-old
+!/LaBSE_BERT/data/wiki-first-paragraph
 
-!/LaBSE-BERT/split-output/split-output-test1
-!/LaBSE-BERT/split-output/split-output-wiki-first-paragraph
-!/LaBSE-BERT/split-output/split-output-wiki-first-paragraph-old
+!/LaBSE_BERT/split_output/split-output-test1
+!/LaBSE_BERT/split_output/split-output-wiki-first-paragraph
+!/LaBSE_BERT/split_output/split-output-wiki-first-paragraph-old
 
-!/LaBSE-BERT/VECTOR-files/BERT-vectors/test1-dim768.pkl
-!/LaBSE-BERT/VECTOR-files/BERT-vectors/wiki-first-paragraph-dim768.pkl
-!/LaBSE-BERT/VECTOR-files/BERT-vectors/wiki-first-paragraph-old-dim768.pkl
-!/LaBSE-BERT/VECTOR-files/BERT-vectors/demo-vec-dim768.pkl
+!/LaBSE_BERT/VECTOR_files/BERT_vectors/test1_dim768.pkl
+!/LaBSE_BERT/VECTOR_files/BERT_vectors/wiki-first-paragraph_dim768.pkl
+!/LaBSE_BERT/VECTOR_files/BERT_vectors/wiki-first-paragraph-old_dim768.pkl
+!/LaBSE_BERT/VECTOR_files/BERT_vectors/demo_vec_dim768.pkl
 
-!/LaBSE-BERT/VECTOR-files/Reduct-to-2D/test1*
-!/LaBSE-BERT/VECTOR-files/Reduct-to-2D/wiki-first-paragraph*
-!/LaBSE-BERT/VECTOR-files/Reduct-to-2D/demo-vec*
+!/LaBSE_BERT/VECTOR_files/Reduct-to-2D/test1*
+!/LaBSE_BERT/VECTOR_files/Reduct-to-2D/wiki-first-paragraph*
+!/LaBSE_BERT/VECTOR_files/Reduct-to-2D/demo-vec*
 
-!/LaBSE-BERT/VECTOR-files/Reduct-to-3D/test1*
-!/LaBSE-BERT/VECTOR-files/Reduct-to-3D/wiki-first-paragraph*
-!/LaBSE-BERT/VECTOR-files/Reduct-to-3D/demo-vec*
+!/LaBSE_BERT/VECTOR_files/Reduct-to-3D/test1*
+!/LaBSE_BERT/VECTOR_files/Reduct-to-3D/wiki-first-paragraph*
+!/LaBSE_BERT/VECTOR_files/Reduct-to-3D/demo-vec*
