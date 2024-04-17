@@ -75,13 +75,20 @@ def plotly_graph_2d_scatter(data=None, subplot=None, x_label='X -->', y_label='Y
                           size=7,
                           colorscale='Viridis'  # change colors
                           )
+        if 'word' in data:
+            hovertext = ['<b>{0}</b><br>'
+                         'Cluster: {1}'.format(w, c)
+                         for w, c in zip(data['word'],
+                                         data['Cluster'])]
+        else:
+            hovertext = ['<b>{0}</b><br>'
+                         'Cluster: {0}'.format(c)
+                         for c in data['Cluster']]
+
         trace1 = go.Scatter(x=data[0], y=data[1],
                             mode='markers',
                             marker=marker,
-                            hovertext=['<b>{0}</b><br>'
-                                       'Cluster: {1}'.format(w, c)
-                                       for w, c in zip(data['word'],
-                                                       data['Cluster'])]
+                            hovertext=hovertext
                             )
 
         fig.add_trace(trace1)
