@@ -7,6 +7,12 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
 
+def split_full_df(og_df: pd.DataFrame):
+    words_df: pd.DataFrame = og_df.iloc[:, 0]
+    vectors_df: pd.DataFrame = og_df.iloc[:, 1:]
+    return words_df, vectors_df
+
+
 def dataframe_to_dict(word_keys, vector_df):
     word_list = list(word_keys['Word'])
     word_dict = dict()
