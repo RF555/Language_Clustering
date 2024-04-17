@@ -13,8 +13,8 @@ old_first_par = 'wiki-first-paragraph-old'
 curr_in = test1
 
 # Path to the current file used as input/output
-_input = 'split-output/split-output-' + curr_in
-_output = 'VECTOR-files/BERT-vectors/' + curr_in
+_input = 'split_output/split_output-' + curr_in
+_output = 'VECTOR_files/BERT_vectors/' + curr_in
 
 if __name__ == '__main__':
     # Open the relevant file (text file already split to rows by sentences)
@@ -47,5 +47,5 @@ if __name__ == '__main__':
 
     first_word = list(word_dict.keys())[0]
     vec_dim = word_dict[first_word].size
-    updated_output = _output + '-dim' + str(vec_dim)
+    updated_output = _output + '_dim' + str(vec_dim)
     dict_to_pkl(word_dict=word_dict, output_path=updated_output)

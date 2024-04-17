@@ -5,7 +5,7 @@ demo_vec = 'demo-vec'
 
 curr_in = demo_vec
 
-_output = 'BERT-vectors/' + curr_in
+_output = 'BERT_vectors/' + curr_in
 
 if __name__ == '__main__':
     word_dict = {}

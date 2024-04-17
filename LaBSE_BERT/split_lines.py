@@ -8,7 +8,7 @@ old_first_par = 'wiki-first-paragraph-old'
 curr_in = old_first_par
 
 _input = 'data/' + curr_in
-_output = 'split-output/split-output-' + curr_in + '-'
+_output = 'split_output/split_output-' + curr_in + '-'
 
 if __name__ == '__main__':
     print("Splitting Lines of ", _input, "\n")

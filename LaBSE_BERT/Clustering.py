@@ -11,7 +11,7 @@ curr_in = test1
 curr_dim = '3'
 
 # Path to the current file used as input
-_input = 'VECTOR-files/Reduct-to-' + curr_dim + 'D/' + curr_in + '(PCA)-dim' + curr_dim
+_input = 'VECTOR_files/Reduct-to-' + curr_dim + 'D/' + curr_in + '(PCA)_dim' + curr_dim
 
 
 def kmeans_elbow_method(data):

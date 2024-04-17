@@ -16,8 +16,8 @@ curr_in = test1
 reduct_dim_to = 3
 
 # Path to the current file used as input/output
-_input = 'VECTOR-files/BERT-vectors/' + curr_in + '-dim768'
-_output = 'VECTOR-files/Reduct-to-' + str(reduct_dim_to) + 'D/' + curr_in
+_input = 'VECTOR_files/BERT_vectors/' + curr_in + '_dim768'
+_output = 'VECTOR_files/Reduct-to-' + str(reduct_dim_to) + 'D/' + curr_in
 
 
 def reduct_pca(n_components):
@@ -54,6 +54,6 @@ if __name__ == '__main__':
     #                         y_label='Second principle component')
     # pyplot_graph_3d(reducted_data)
 
-    updated_output = _output + '-dim' + str(reducted_data[0].size)
+    updated_output = _output + '_dim' + str(reducted_data[0].size)
     dict_to_pkl(word_dict=dataframe_to_dict(word_keys=word_keys, vector_df=pd.DataFrame(reducted_data)),
                 output_path=updated_output)
