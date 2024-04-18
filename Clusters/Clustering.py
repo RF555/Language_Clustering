@@ -1,5 +1,4 @@
-from LaBSE_BERT.UtilityFunctions import *
-from sklearn.cluster import KMeans
+from ClustersUtilityFunctions import KMeans, plotly_graph_2d, pkl_to_dataframe, plotly_graph_3d_clusters
 
 demo_vec = 'demo-vec'
 test1 = 'test1'
