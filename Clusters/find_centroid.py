@@ -26,7 +26,7 @@ centroids_closest_points_index, _ = pairwise_distances_argmin_min(centroids, vec
 
 vectors_np = vectors_df.to_numpy()
 words_np = words_df.to_numpy()
-# closest_points = [X_np[i] for i in closest_ids]
+
 closest_points = pd.DataFrame([vectors_np[i] for i in centroids_closest_points_index])
 closest_words = pd.DataFrame([words_np[i] for i in centroids_closest_points_index])
 print(f'closest points to centroids:\n{closest_points}\n\n')
