@@ -54,7 +54,7 @@ def add_to_word_dict(word, pre_sign='none', post_sign='none'):
         word_dict[word] = get_vec(word)
 
         # df = pd.DataFrame(get_vec(word))
-        # df.insert(loc=0, column='Word', value=word)
+        # df.insert(loc=0, column='word', value=word)
         # global word_df
         # word_df = pd.concat([word_df, df])
 

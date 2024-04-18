@@ -3,11 +3,18 @@ from LaBSE_BERT.UtilityFunctions import plotly_graph_2d_scatter, split_full_df, 
 from sklearn.cluster import KMeans
 from sklearn.metrics import pairwise_distances_argmin_min
 
+import os
+
+cur_path = os.path.dirname(__file__)
+
 nltk_df = 'VECTOR_files/BERT_vectors/nltk(236736_words_dim768_df.pkl'
 
-_input = nltk_df
+new_path = os.path.relpath('..\LaBSE_BERT\\' + nltk_df, cur_path)
+
+_input = new_path
 
 full_df = pd.read_pickle(_input)
+print(full_df.head())
 
 words_df, vectors_df = split_full_df(full_df)
 
@@ -39,5 +46,10 @@ closest_words = pd.DataFrame([words_np[i] for i in centroids_closest_points_inde
 print(f'closest points to centroids:\n{closest_points}\n\n')
 print(f'closest words to centroids:\n{closest_words}')
 
+closest_words.rename(columns={0: 'word'}, inplace=True)  # rename the wors column
+
 closest_points.to_csv('600_closest_points.csv')
 closest_words.to_csv('600_closest_words.csv')
+
+closest_words_vectors = pd.concat([closest_words, closest_points], axis=1)
+closest_words_vectors.to_csv('600_closest_words_vectors.csv')

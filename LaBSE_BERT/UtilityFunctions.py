@@ -30,7 +30,7 @@ def pkl_to_dataframe(input_path: str):
         loaded_dict = pickle.load(file)
 
     word_keys = pd.DataFrame(loaded_dict.keys())
-    word_keys.rename(columns={0: 'Word'}, inplace=True)
+    word_keys.rename(columns={0: 'word'}, inplace=True)
     vector_arr = np.array(loaded_dict[list(loaded_dict.keys())[0]])
 
     for key in loaded_dict.keys():

@@ -12,7 +12,7 @@ full_df = pd.DataFrame()
 i = 0
 for word, vector in loaded_dict.items():
     temp_vectors_df = pd.DataFrame(vector, index=[i])
-    temp_words_df = pd.DataFrame({"words": [word]}, index=[i])
+    temp_words_df = pd.DataFrame({"word": [word]}, index=[i])
     temp_full_df = pd.concat([temp_words_df, temp_vectors_df], axis=1)
     i += 1
     # print(f'[{i}] {word}:\n{temp_vectors_df}')
