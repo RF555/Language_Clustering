@@ -1,7 +1,7 @@
 from ClustersUtilityFunctions import split_full_df, pd, KMeans, pairwise_distances_argmin_min, \
     sentence_to_words_vectors_df, get_vec_from_dict
 
-words_600_df, vectors_600_df = split_full_df(pd.read_csv('600_centroid_words_vectors.csv'))
+words_600_df, vectors_600_df = split_full_df(pd.read_csv('600_centroid_words_vectors_works.csv'))
 print(f'words_600_df:\n{words_600_df}')
 print(f'vectors_600_df:\n{vectors_600_df}\n\n')
 
