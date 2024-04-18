@@ -34,8 +34,9 @@ print(f'closest words to centroids:\n{closest_words}')
 
 closest_words.rename(columns={0: 'word'}, inplace=True)  # rename the wors column
 
-closest_points.to_csv('600_centroid_vectors.csv')
-closest_words.to_csv('600_centroid_words.csv')
+closest_points.iloc[: , 1:].to_csv('600_centroid_vectors.csv')
+closest_words.iloc[: , 1:].to_csv('600_centroid_words.csv')
 
 closest_words_vectors = pd.concat([closest_words, closest_points], axis=1)
-closest_words_vectors.to_csv('600_centroid_words_vectors.csv')
+closest_words_vectors.to_csv('600_centroid_words_vectors2.csv')
+closest_words_vectors.to_pickle('600_centroid_words_vectors.pkl')
