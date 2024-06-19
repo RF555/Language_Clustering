@@ -8,8 +8,8 @@ import os
 
 cur_path = os.path.dirname(__file__)
 
-nltk_df = 'VECTOR_files/BERT_vectors/nltk(236736_words_dim768_df.pkl'
-nltk_dict = 'VECTOR_files/BERT_vectors/nltk(236736_words_dim768_dict.pkl'
+nltk_df = 'VECTOR_files/BERT_vectors/nltk(236736_words)_dim768_df.pkl'
+nltk_dict = 'VECTOR_files/BERT_vectors/nltk(236736_words)_dim768_dict.pkl'
 
 nltk_df_path = os.path.relpath('..\LaBSE_BERT\\' + nltk_df, cur_path)
 nltk_dict_path = os.path.relpath('..\LaBSE_BERT\\' + nltk_dict, cur_path)

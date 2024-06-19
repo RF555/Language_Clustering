@@ -1,8 +1,8 @@
 import pickle as pkl
 import pandas as pd
 
-input_path = 'VECTOR_files/BERT_vectors/nltk(236736_words_dim768_dict.pkl'
-output_path = 'VECTOR_files/BERT_vectors/nltk(236736_words_dim768_df.pkl'
+input_path = 'VECTOR_files/BERT_vectors/nltk(236736_words)_dim768_dict.pkl'
+output_path = 'VECTOR_files/BERT_vectors/nltk(236736_words)_dim768_df.pkl'
 
 with open(input_path, "rb") as file:
     loaded_dict = pkl.load(file)
