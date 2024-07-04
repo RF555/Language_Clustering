@@ -1,5 +1,9 @@
-from UtilityFunctions import pd, open_pkl
+from UtilityFunctions import pd, open_pkl, dump_pkl
+
+# Inputs
 from Pathways import full_nltk_FREQ_DICT_path, full_nltk_word_DICT_path
+# Outputs
+from Pathways import full_nltk_word_DF_path, filtered_nltk_freq_DF_path
 
 # word_dict_path2 = 'GenerateData/pkl_files/nltk(full)BERT_dim768_dict2.pkl'
 
@@ -14,7 +18,7 @@ if __name__ == '__main__':
     vectors_df = full_word_df
     vectors_df.reset_index(drop=True, inplace=True)
 
-    pd.to_pickle([words_df, vectors_df], 'pkl_files/nltk(full)BERT_dim768_df.pkl')
+    dump_pkl([words_df, vectors_df], full_nltk_word_DF_path)
 
     freq_dict = open_pkl(full_nltk_FREQ_DICT_path)
     drop_count = 0
@@ -37,4 +41,4 @@ if __name__ == '__main__':
     print(filtered_words_df)
     print(filtered_vectors_df)
 
-    pd.to_pickle([filtered_words_df, filtered_vectors_df], 'pkl_files/nltk(filtered)BERT_dim768_df.pkl')
+    dump_pkl([filtered_words_df, filtered_vectors_df], filtered_nltk_freq_DF_path)

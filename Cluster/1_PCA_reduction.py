@@ -1,6 +1,9 @@
 from UtilityFunctions import pd, open_pkl, dump_pkl
-from Pathways import full_nltk_word_DF_path, traind_PCA_path, \
-    full_nltk_PCA_DF_path, full_nltk_PCA_DICT_path
+
+# Inputs
+from Pathways import full_nltk_word_DF_path
+# Outputs
+from Pathways import traind_PCA_path, full_nltk_PCA_DF_path, full_nltk_PCA_DICT_path
 
 from sklearn.decomposition import PCA
 import sklearn.preprocessing as skscaler

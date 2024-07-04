@@ -1,6 +1,9 @@
 from UtilityFunctions import pd, open_pkl, dump_pkl
-from Pathways import full_nltk_PCA_DICT_path, full_nltk_FREQ_DICT_path, \
-    filtered_nltk_PCA_DF_path
+
+# Inputs
+from Pathways import full_nltk_PCA_DICT_path, full_nltk_FREQ_DICT_path
+# Output
+from Pathways import filtered_nltk_PCA_DF_path
 
 word_dict = open_pkl(full_nltk_PCA_DICT_path)
 freq_dict = open_pkl(full_nltk_FREQ_DICT_path)

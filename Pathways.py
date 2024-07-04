@@ -15,3 +15,7 @@ full_nltk_PCA_DICT_path = 'Cluster/pkl_files/nltk(full)_PCA_dict.pkl'
 
 # Filtered NLTK *after* PCA
 filtered_nltk_PCA_DF_path = 'Cluster/pkl_files/nltk(filtered)_PCA_df.pkl'
+
+# 600 centroids
+full_600_DF_path = 'Cluster/pkl_files/600_centroids(full)_df.pkl'
+filtered_600_DF_path = 'Cluster/pkl_files/600_centroids(filtered)_df.pkl'
