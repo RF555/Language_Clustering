@@ -12,3 +12,7 @@ ROOT_DIR = os.path.dirname(os.path.abspath(__file__)) + '/'
 
 def open_pkl(path):
     return pkl.load(open(ROOT_DIR + path, 'rb'))
+
+
+def dump_pkl(obj, path):
+    pkl.dump(obj, open(ROOT_DIR + path, 'wb'))
