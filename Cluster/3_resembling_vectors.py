@@ -1,13 +1,27 @@
-from ClustersUtilityFunctions import split_full_df, pd, KMeans, pairwise_distances_argmin_min, \
-    sentence_to_words_vectors_df, get_vec_from_dict
+from UtilityFunctions import pd, open_pkl, dump_pkl
 
-words_600_df, vectors_600_df = split_full_df(pd.read_csv('OLD_DATA/600_centroid_words_vectors_works.csv'))
+# Inputs
+from Pathways import filtered_600_DF_path, full_600_DF_path, \
+    full_nltk_PCA_DICT_path
+
+from sklearn.metrics import pairwise_distances_argmin_min
+
+words_600_df, vectors_600_df = open_pkl(filtered_600_DF_path)
 print(f'words_600_df:\n{words_600_df}')
 print(f'vectors_600_df:\n{vectors_600_df}\n\n')
 
+word_dict = open_pkl(full_nltk_PCA_DICT_path)
+
 sentence = 'we go to the cinema tonight'
 
-sentence_words, sentence_vectors = sentence_to_words_vectors_df(sentence)
+sentence_words = list()
+sentence_vectors = pd.DataFrame()
+
+for word in sentence.split():
+    sentence_words.append(word)
+    vector = word_dict[word]
+    print(vector)
+    sentence_vectors = sentence_vectors.append(vector, ignore_index=True)
 print(f'sentence_words:\n{sentence_words}')
 print(f'sentence_vectors:\n{sentence_vectors}\n\n')
 
