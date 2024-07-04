@@ -1,8 +1,11 @@
-from ClustersUtilityFunctions import nltk_df_path, split_full_df, pd, KMeans, pairwise_distances_argmin_min, \
+from ClustersUtilityFunctions import nltk_df_path, nltk_df_filtered_path, split_full_df, pd, KMeans, \
+    pairwise_distances_argmin_min, \
     get_words_vectors_df
 import pickle as pkl
 
-words_df, vectors_df = pkl.load(open('pkl_files/nltk(236736_words)_PCA_word_vector_df.pkl', 'rb'))
+# words_df, vectors_df = pkl.load(open('pkl_files/nltk(236736_words)_PCA_word_vector_df.pkl', 'rb'))
+# words_df, vectors_df = pkl.load(open('pkl_files/nltk_filtered_PCA_word_vector_df.pkl', 'rb'))
+words_df, vectors_df = pkl.load(open('pkl_files/nltk_filtered_PCA_word_vector_df2.pkl', 'rb'))
 
 # Split to clusters using KMeans
 vectors_df = pd.DataFrame(vectors_df)
@@ -35,8 +38,14 @@ print(f'closest words to centroids:\n{closest_words}')
 
 closest_words.rename(columns={0: 'word'}, inplace=True)  # rename the wors column
 
-pkl.dump([closest_words,closest_points], open('pkl_files/600_centroid_PCA_word_vector_df.pkl', "wb"))
-closest_words.to_csv('600_centroid_words.csv')
+# pkl.dump([closest_words, closest_points], open('pkl_files/600_centroid_PCA_word_vector_df.pkl', "wb"))
+# closest_words.to_csv('600_centroid_words.csv')
+
+# pkl.dump([closest_words, closest_points], open('pkl_files/(filtered)600_centroid_PCA_word_vector_df.pkl', "wb"))
+# closest_words.to_csv('(filtered)600_centroid_words.csv')
+
+pkl.dump([closest_words, closest_points], open('pkl_files/(filtered)600_centroid_PCA_word_vector_df2.pkl', "wb"))
+closest_words.to_csv('(filtered)600_centroid_words2.csv')
 
 # closest_points.iloc[: , 1:].to_csv('600_centroid_vectors.csv')
 # closest_words.iloc[: , 1:].to_csv('600_centroid_words.csv')
