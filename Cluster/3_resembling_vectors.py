@@ -20,10 +20,10 @@ sentence_vectors = pd.DataFrame()
 for word in sentence.split():
     sentence_words.append(word)
     vector = word_dict[word]
-    print(vector)
+    # print(vector)
     sentence_vectors = sentence_vectors.append(vector, ignore_index=True)
-print(f'sentence_words:\n{sentence_words}')
-print(f'sentence_vectors:\n{sentence_vectors}\n\n')
+# print(f'sentence_words:\n{sentence_words}')
+# print(f'sentence_vectors:\n{sentence_vectors}\n\n')
 
 # Index list of vectors (from the 600 words) closest to each vector (from the given sentence)
 resembling_vectors_index, _ = pairwise_distances_argmin_min(sentence_vectors, vectors_600_df)
