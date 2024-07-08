@@ -12,20 +12,21 @@ print(f'vectors_600_df:\n{vectors_600_df}\n\n')
 
 word_dict = open_pkl(full_nltk_PCA_DICT_path)
 
-sentence = 'we go to the cinema tonight'
-sentence2 ='yesterday i went '
+sentence1 = 'we go to the cinema tonight'
+sentence2 = 'yesterday i went to eat with a friend'
 
+curr_sentence = sentence1
 
 sentence_words = list()
 sentence_vectors = pd.DataFrame()
 
-for word in sentence.split():
+for word in curr_sentence.split():
     sentence_words.append(word)
-    vector = word_dict[word]
-    # print(vector)
-    sentence_vectors = sentence_vectors.append(vector, ignore_index=True)
-# print(f'sentence_words:\n{sentence_words}')
-# print(f'sentence_vectors:\n{sentence_vectors}\n\n')
+    vector = pd.DataFrame([word_dict[word]])
+    # print(f'vector:\n\t{vector}')
+    sentence_vectors = pd.concat([sentence_vectors, vector], ignore_index=True)
+print(f'sentence_words:\n{sentence_words}')
+print(f'sentence_vectors:\n{sentence_vectors}\n\n')
 
 # Index list of vectors (from the 600 words) closest to each vector (from the given sentence)
 resembling_vectors_index, _ = pairwise_distances_argmin_min(sentence_vectors, vectors_600_df)
