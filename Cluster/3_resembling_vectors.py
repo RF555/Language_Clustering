@@ -13,6 +13,8 @@ print(f'vectors_600_df:\n{vectors_600_df}\n\n')
 word_dict = open_pkl(full_nltk_PCA_DICT_path)
 
 sentence = 'we go to the cinema tonight'
+sentence2 ='yesterday i went '
+
 
 sentence_words = list()
 sentence_vectors = pd.DataFrame()
